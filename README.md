@@ -1,24 +1,25 @@
-# README
+# Things to do
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- add devise (include address) x
+- scaffold products x
+- design the index and show page x
+- fix navbar links x
 
-Things you may want to cover:
+- associations between user, product, line_item and cart models
+- sessions for cart_id
 
-* Ruby version
+- buy now
+- add to cart
+- remove product from cart
+- calculate sub_total
 
-* System dependencies
+### Use Turbo Frames for above ^
 
-* Configuration
+- using turbo frame to edit address on cart page
+- users have their own address
 
-* Database creation
+- order model assocations with user
+- checkout with Razorpay
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- users can see their own orders
+- admin can see all orders.
