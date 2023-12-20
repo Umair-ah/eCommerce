@@ -5,7 +5,7 @@
 - design the index and show page x
 - fix navbar links x
 
-- associations between user, product, line_item and cart models
+- associations between user, product, line_item and cart, order models
 - sessions for cart_id
 
 - buy now
@@ -18,7 +18,6 @@
 - using turbo frame to edit address on cart page
 - users have their own address
 
-- order model assocations with user
 - checkout with Razorpay
 
 - users can see their own orders
