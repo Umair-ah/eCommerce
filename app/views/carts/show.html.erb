@@ -24,7 +24,7 @@
                       <div class="sm:order-1">
                         <div class="mx-auto flex h-8 items-stretch text-gray-600">
                           <button class="flex items-center justify-center rounded-l-md bg-gray-200 px-4 transition hover:bg-black hover:text-white">-</button>
-                          <div class="flex w-full items-center justify-center bg-gray-100 px-4 text-xs uppercase transition">1</div>
+                          <div class="flex w-full items-center justify-center bg-gray-100 px-4 text-xs uppercase transition"><%= line_item.quantity %></div>
                           <button class="flex items-center justify-center rounded-r-md bg-gray-200 px-4 transition hover:bg-black hover:text-white">+</button>
                         </div>
                       </div>
@@ -32,11 +32,12 @@
                   </div>
 
                   <div class="absolute top-0 right-0 flex sm:bottom-0 sm:top-auto">
-                    <button type="button" class="flex rounded p-2 text-center text-gray-500 transition-all duration-200 ease-in-out focus:shadow hover:text-gray-900">
+                    <%= button_to destroy_from_cart_path(line_item.product), method: :delete, class:"flex rounded p-2 text-center text-gray-500 transition-all duration-200 ease-in-out focus:shadow hover:text-gray-900" do %>
                       <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class=""></path>
                       </svg>
                     </button>
+                    <% end %>
                   </div>
                 </div>
               </li>
