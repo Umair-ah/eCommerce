@@ -5,9 +5,10 @@
 - design the index and show page x
 - fix navbar links x
 
-- associations between user, product, line_item and cart, order models
-- sessions for cart_id
+- associations between user, product, line_item and cart, order models x
+- sessions for cart_id x
 
+- routes
 - buy now
 - add to cart
 - remove product from cart
