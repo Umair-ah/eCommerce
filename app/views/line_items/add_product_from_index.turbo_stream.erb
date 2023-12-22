@@ -1,0 +1,8 @@
+<%= turbo_stream.replace "product_#{@selected_product.id}_user_#{current_user.id}" do %>
+  <%= render "form_for_add_to_cart" %>
+<% end %>,
+
+<%= turbo_stream.update "cart_icon_#{@current_cart.id}" do %>
+  <%= render partial: "layouts/cart_icon_size", locals: {cart: @current_cart} %>
+<% end %>
+

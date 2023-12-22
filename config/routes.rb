@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post "line_items_add_to_cart/:product_id", to: "line_items#add_to_cart", as: "line_item_add_to_cart"
   post "line_items_add_quantity/:product_id", to: "line_items#add_quantity", as: "line_item_add_quantity"
   post "line_items_subtract_quantity/:product_id", to: "line_items#subtract_quantity", as: "line_item_subtract_quantity"
+  get "add_product_from_index/:product_id", to: "line_items#add_product_from_index", as: "add_product_from_index"
 
 
   get "customer_address", to: "customers#customer_address", as:"customer_address"

@@ -1,5 +1,9 @@
 class LineItemsController < ApplicationController
 
+  def add_product_from_index
+    check_and_add_to_cart
+  end
+
   def buy_now
     check_and_add_to_cart
     redirect_to carts_path(@current_cart)

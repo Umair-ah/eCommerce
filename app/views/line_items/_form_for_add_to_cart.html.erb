@@ -1,0 +1,4 @@
+<%= form_with(url: line_item_add_to_cart_path(@selected_product), method: :post) do |form| %>
+  <%= form.number_field :quantity %>
+  <%= form.submit "Add", class:"bg-gray-200 p-2 hover:cursor-pointer hover:bg-gray-300 transition:ease-in duration-300" %>
+<% end %>
