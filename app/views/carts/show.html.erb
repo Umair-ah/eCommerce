@@ -6,7 +6,7 @@
           <div class="flow-root">
             <ul class="-my-8">
             <% @current_cart.line_items.each do |line_item| %>
-              <li class="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0">
+              <li id="line_item_<%= line_item.id %>" class="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0">
                 <div class="shrink-0">
                   <%= image_tag line_item.product.images[0], class:"h-24 w-24 max-w-full rounded-lg object-cover" %>
                 </div>
@@ -23,9 +23,13 @@
 
                       <div class="sm:order-1">
                         <div class="mx-auto flex h-8 items-stretch text-gray-600">
-                          <button class="flex items-center justify-center rounded-l-md bg-gray-200 px-4 transition hover:bg-black hover:text-white">-</button>
-                          <div class="flex w-full items-center justify-center bg-gray-100 px-4 text-xs uppercase transition"><%= line_item.quantity %></div>
-                          <button class="flex items-center justify-center rounded-r-md bg-gray-200 px-4 transition hover:bg-black hover:text-white">+</button>
+                          <%= button_to "-", line_item_subtract_quantity_path(line_item.product), class:"flex items-center justify-center rounded-l-md bg-gray-200 px-4 transition hover:bg-black hover:text-white" %>
+                          <div class="flex w-full items-center justify-center bg-gray-100 px-4 text-xs uppercase transition">
+                            <%= turbo_frame_tag "quantity_#{line_item.id}" do %>
+                              <%= render "quantity", line_item: line_item %>  
+                            <% end %>
+                          </div>
+                          <%= button_to "+", line_item_add_quantity_path(line_item.product), class:"flex items-center justify-center rounded-r-md bg-gray-200 px-4 transition hover:bg-black hover:text-white" %>
                         </div>
                       </div>
                     </div>
@@ -49,7 +53,11 @@
           <div class="mt-6 border-t border-b py-2">
             <div class="flex items-center justify-between">
               <p class="text-sm text-gray-400">Subtotal</p>
-              <p class="text-lg font-semibold text-gray-900">&#x20B9;<%= @cart.sub_total %></p>
+              <p class="text-lg font-semibold text-gray-900">
+                <%= turbo_frame_tag "Cart_#{@cart.id}" do %>
+                  <%= render "sub_total", cart: @cart %>
+                <% end %>
+              </p>
             </div>
           </div>
 
