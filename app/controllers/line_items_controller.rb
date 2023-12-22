@@ -1,5 +1,20 @@
 class LineItemsController < ApplicationController
 
+  def add_to_cart_from_index
+    check_and_add_to_cart
+    @line_item.quantity += params[:quantity].to_i
+    @line_item.save
+    respond_to do |format|
+      format.turbo_stream{
+        render turbo_stream:
+        turbo_stream.update(
+          "product_#{@selected_product.id}_user_#{current_user.id}",
+          partial: "form_for_add_to_cart",
+        )
+      }
+    end
+  end
+
   def add_product_from_index
     check_and_add_to_cart
   end

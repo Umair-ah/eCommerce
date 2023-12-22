@@ -1,4 +1,4 @@
-<%= turbo_stream.replace "product_#{@selected_product.id}_user_#{current_user.id}" do %>
+<%= turbo_stream.update "product_#{@selected_product.id}_user_#{current_user.id}" do %>
   <%= render "form_for_add_to_cart" %>
 <% end %>,
 
