@@ -11,7 +11,12 @@ Rails.application.routes.draw do
   post "line_items_subtract_quantity/:product_id", to: "line_items#subtract_quantity", as: "line_item_subtract_quantity"
 
 
+  get "customer_address", to: "customers#customer_address", as:"customer_address"
+  get "customer_address_turbo", to: "customers#customer_address_turbo", as:"customer_address_turbo"
 
+
+
+  post "customer_address_update", to: "customers#customer_address_update", as:"customer_address_update"
 
   delete "line_item_delete_from_cart/:product_id", to: "line_items#destroy_from_cart", as: "destroy_from_cart"
 end

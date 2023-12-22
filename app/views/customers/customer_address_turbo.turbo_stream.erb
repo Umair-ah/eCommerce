@@ -1,0 +1,3 @@
+<%= turbo_stream.update "current_user_address#{current_user.id}" do %>
+  <%= render "customers/address_form" %>
+<% end %>

@@ -1,0 +1,5 @@
+<%= form_with(url: customer_address_update_path) do |form| %>
+  <%= form.label :address %>
+  <%= form.text_area :address, value: current_user.address %>
+  <%= form.submit "Save" %>
+<% end %>

@@ -1,0 +1,4 @@
+<%= form_with(url: customer_address_update_path) do |form| %>
+  <%= form.text_area :address, value: current_user.address, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %> <br>
+  <%= form.submit "Save", class:"text-white bg-red-700 p-2 hover:bg-red-800 transition:ease-out duration:300 hover:cursor-pointer" %>
+<% end %>
