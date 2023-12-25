@@ -1,4 +1,13 @@
 <%= content_for :success do %>
-  <h2>YOUR PAYMENT IS SUCCESS!!</h2>
-  <%= link_to "Orders", root_path %>
+ <section class="flex items-center h-screen bg-white font-poppins dark:bg-gray-800 ">
+    <div class="justify-center flex-1 px-6 py-16 mx-auto lg:py-16 md:px-7">
+        <div
+            class="max-w-xl p-8 mx-auto border rounded-md bg-gradient-to-r from-blue-50 to-gray-50 dark:from-gray-900 dark:to-gray-900 dark:border-gray-900 dark:bg-gray-900">
+            <h2 class="mb-4 text-4xl font-extrabold tracking-wide dark:text-gray-300">Thank you for your order !
+            </h2>
+           
+            <%= link_to "View Orders", root_path, class:"text-blue-500 hover:underline dark:text-blue-400 hover:text-blue-700" %>
+        </div>
+    </div>
+</section>
 <% end %>

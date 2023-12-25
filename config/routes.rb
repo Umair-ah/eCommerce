@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
   post "/order", to: "orders#order", as: "order"
   get "/success", to: "orders#success", as: "success"
+  get "/orders", to: "orders#index", as: "orders"
+  get "/order/:order_id", to: "orders#show", as: "order_show"
+
 
   post "customer_address_update", to: "customers#customer_address_update", as:"customer_address_update"
 
