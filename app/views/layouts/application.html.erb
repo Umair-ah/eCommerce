@@ -13,6 +13,11 @@
 
   <body>
     <%= content_for?(:success) ? yield(:success) : render("layouts/nav") %>
+
+    <div id="flash_<%= current_user&.id %>">
+    </div>
+    
+
     <%= yield %>
   </body>
 </html>

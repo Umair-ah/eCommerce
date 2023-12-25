@@ -4,5 +4,9 @@
 
 <%= turbo_stream.update "cart_icon_#{@current_cart.id}" do %>
   <%= render partial: "layouts/cart_icon_size", locals: {cart: @current_cart} %>
+<% end %>,
+
+<%= turbo_stream.update "flash_#{current_user&.id}" do %>
+  <%= render "layouts/flash" %>
 <% end %>
 

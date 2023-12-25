@@ -58,14 +58,19 @@
                 </div>
                 <div class="flex -mx-2 mb-4 mt-5">
                     <div class="w-1/2 px-2">
+                      
+                      <% if current_user  %>
                         <%= button_to "Buy Now", line_item_buy_now_path(@product), data: {turbo: false} , class:"w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700 transition:ease-in duration-300"%>
-                    </div>
-                    <div class="w-1/2 px-2">
-                      <%= form_with(url: line_item_add_to_cart_path(@product), method: :post) do |form| %>
-                        <%= form.number_field :quantity %>
-                        <%= form.submit "Add", class:"bg-gray-200 p-2 hover:cursor-pointer hover:bg-gray-300 transition:ease-in duration-300" %>
+                      <% else %>
+                        <%= button_to "Buy Now", new_user_session_path, data: {turbo: false} , class:"w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700 transition:ease-in duration-300"%>
                       <% end %>
                       
+                    </div>
+                    <div class="w-1/2 px-2" id="add_to_cart_<%= current_user&.id %>">
+                    <% if current_user  %>
+                      <%= render "products/add_to_cart_form", product: @product %>
+                    <% end %>
+                    
                     </div>
                 </div>
             </div>
