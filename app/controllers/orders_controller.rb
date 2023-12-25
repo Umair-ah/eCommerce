@@ -16,7 +16,11 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_user.orders
+    if current_user.try(:type)
+      @orders = Order.all
+    else
+      @orders = current_user.orders
+    end
   end
 
   def show

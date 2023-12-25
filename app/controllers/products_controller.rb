@@ -10,10 +10,19 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    if current_user.try(:type)
+      @product = Product.new
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
+    if current_user.try(:type)
+    else
+      redirect_to root_path
+    end
+
   end
 
   def create

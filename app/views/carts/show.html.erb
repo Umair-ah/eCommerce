@@ -78,11 +78,13 @@
               </div>
           </div>
 
+        <% if @cart.line_items.present? %>
           <div class="mt-6 text-center" id="checkout_btn_<%= current_user.id %>">
             <%= render "carts/razorpay", cart: @cart %>
           </div>
           <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
+        <% end %>
+        
         </div>
       </div>
     </div>
