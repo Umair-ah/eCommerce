@@ -8,16 +8,16 @@
 - associations between user, product, line_item and cart, order models x
 - sessions for cart_id x
 
-- routes
-- buy now
-- add to cart
-- remove product from cart
-- calculate sub_total
+- routes x
+- buy now x
+- add to cart x
+- remove product from cart x
+- calculate sub_total x
 
-### Use Turbo Frames for above ^
+### Use Turbo Frames for above ^ x
 
-- using turbo frame to edit address on cart page
-- users have their own address
+- using turbo frame to edit address on cart page x
+- users have their own address x
 
 - checkout with Razorpay
 

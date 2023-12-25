@@ -99,6 +99,9 @@ GEM
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.7.1)
@@ -124,6 +127,7 @@ GEM
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
+    multi_xml (0.6.0)
     net-imap (0.4.8)
       date
       net-protocol
@@ -175,6 +179,8 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.1.0)
+    razorpay (3.2.1)
+      httparty (~> 0.14)
     rdoc (6.6.2)
       psych (>= 4.0.0)
     redis (4.8.1)
@@ -237,6 +243,7 @@ DEPENDENCIES
   jsbundling-rails
   puma (~> 5.0)
   rails (~> 7.0.8)
+  razorpay
   redis (~> 4.0)
   selenium-webdriver
   sprockets-rails

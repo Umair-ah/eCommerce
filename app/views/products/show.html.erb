@@ -60,7 +60,7 @@
                 </div>
                 <div class="flex -mx-2 mb-4 mt-5">
                     <div class="w-1/2 px-2">
-                        <%= button_to "Buy Now", line_item_buy_now_path(@product), class:"w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700 transition:ease-in duration-300"%>
+                        <%= button_to "Buy Now", line_item_buy_now_path(@product), data: {turbo: false} , class:"w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700 transition:ease-in duration-300"%>
                     </div>
                     <div class="w-1/2 px-2">
                       <%= form_with(url: line_item_add_to_cart_path(@product), method: :post) do |form| %>

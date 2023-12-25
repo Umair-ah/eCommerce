@@ -1,7 +1,6 @@
 <p style="color: green"><%= notice %></p>
 <%= session[:cart_id] %>
 <h1>Products</h1>
-
 <div id="products" class="grid grid-cols-4 place-items-center">
   <% @products.each do |product| %>
     <div class="group my-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
@@ -29,7 +28,7 @@
           </p>
         </div>
 
-        <%= turbo_frame_tag "product_#{product.id}_user_#{current_user.id}" do %>
+        <%= turbo_frame_tag "product_#{product.id}_user_#{current_user&.id}" do %>
           <%= link_to add_product_from_index_path(product), data:{controller:"wire"}, class:"flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300" do %>
         
         
@@ -45,4 +44,3 @@
 
   <% end %>
 </div>
-

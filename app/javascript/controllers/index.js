@@ -7,5 +7,8 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import RazorpayController from "./razorpay_controller"
+application.register("razorpay", RazorpayController)
+
 import WireController from "./wire_controller"
 application.register("wire", WireController)

@@ -57,6 +57,12 @@ class LineItemsController < ApplicationController
             partial: "layouts/cart_icon_size",
             locals: {cart: @current_cart}
           ),
+
+          turbo_stream.update(
+            "checkout_btn_#{current_user.id}",
+            partial: "carts/razorpay",
+            locals: {cart: @current_cart}
+          )
         ]
       }
     end
@@ -110,6 +116,12 @@ class LineItemsController < ApplicationController
           turbo_stream.update(
             "Cart_#{@current_cart.id}",
             partial: "carts/sub_total",
+            locals: {cart: @current_cart}
+          ),
+
+          turbo_stream.update(
+            "checkout_btn_#{current_user.id}",
+            partial: "carts/razorpay",
             locals: {cart: @current_cart}
           )
         ]

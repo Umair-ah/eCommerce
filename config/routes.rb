@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   get "customer_address", to: "customers#customer_address", as:"customer_address"
   get "customer_address_turbo", to: "customers#customer_address_turbo", as:"customer_address_turbo"
 
-
+  post "/order", to: "orders#order", as: "order"
+  get "/success", to: "orders#success", as: "success"
 
   post "customer_address_update", to: "customers#customer_address_update", as:"customer_address_update"
 
