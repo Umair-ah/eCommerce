@@ -1,0 +1,27 @@
+<div class="flex items-center gap-[60px] border-slate-200 border-b-2 p-1">
+  <h3 class="font-bold text-gray-700 text-lg">Order#</h3>
+  <h3 class="font-bold text-gray-700 text-lg">Customer</h3>
+  <h3 class="font-bold text-gray-700 text-lg">Products</h3>
+  <h3 class="font-bold text-gray-700 text-lg">Date</h3>
+  <h3 class="font-bold text-gray-700 text-lg">Amount Paid</h3>
+  <h3 class="font-bold text-gray-700 text-lg">Mark Delivered?</h3>
+  <h3 class="font-bold text-gray-700 text-lg">View Details</h3>
+
+</div>
+
+<div>
+  <% @orders.each do |order| %>
+    <div class="flex items-center gap-[66px] border-slate-200 border-b-2 p-2">
+      <h3>Order#<%= order.id %></h3>
+      <h3><%= order.user.email %></h3>
+      <h3><%= order.line_items.size %></h3>
+      <h3><%= order.created_at.strftime("%d-%m-%Y") %></h3>
+      <h3 class="text-emerald-500">&#8377;<%= order.total %></h3>
+      <%= button_to "Mark Delivered", mark_delivered_path(order), method: :post, class:"text-white bg-blue-600 px-2 py-1 rounded-md hover:bg-blue-700" %>
+      <%= link_to "Details", order_show_path(order), class:"bg-gray-200 hover:bg-gray-300 px-2 py-1 rounded-md" %>
+    </div>
+
+  
+  <% end %>
+  
+</div>

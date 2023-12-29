@@ -1,20 +1,32 @@
-<div class="bg-gray-50 py-12 w-screen leading-6">
-  <div class="mx-auto px-4 sm:px-6 lg:px-8"> 
 
-    <p class="mt-5 text-lg font-bold leading-7 text-gray-800">Your Orders</p>
+<% if current_user.try(:type) %>
+  <div class="grid place-items-end px-[60px]"><%= link_to "Marked Deliveries", index_marked_path, class:"text-blue-700 hover:text-blue-900" %></div>
+  <div class="grid place-items-center mt-[50px]" id="admin_orders">
+    <%= render "orders/admin_orders" %>
+  </div>  
 
-    <hr class="mt-8 border-t border-gray-300" />
-  </div>
+<% else %>
 
-  <% @orders.each do |order| %>
-    <%= link_to order_show_path(order) do %>
-      <div class="grid place-items-start p-10 bg-gray-100 hover:bg-gray-200 my-2">
-        <h2 class="text-2xl font-extrabold text-gray-700 ">Order - <%= order.id %></h2>
-        <h2>Products: <%= order.line_items.size %></h2>
-      </div>
+  <div class="bg-gray-50 py-12 w-screen leading-6">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8"> 
+
+      <p class="mt-5 text-lg font-bold leading-7 text-gray-800">Your Orders</p>
+
+      <hr class="mt-8 border-t border-gray-300" />
+    </div>
+
+    <% @orders.each do |order| %>
+      <%= link_to order_show_path(order) do %>
+        <div class="grid place-items-start p-10 bg-gray-100 hover:bg-gray-200 my-2">
+          <h2 class="text-2xl font-extrabold text-gray-700 ">Order - <%= order.id %></h2>
+          <h2>Products: <%= order.line_items.size %></h2>
+        </div>
+      <% end %>
+      
+      
     <% end %>
     
-    
-  <% end %>
-  
-</div>
+  </div>
+
+<% end %>
+

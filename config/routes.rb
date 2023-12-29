@@ -26,4 +26,10 @@ Rails.application.routes.draw do
   post "customer_address_update", to: "customers#customer_address_update", as:"customer_address_update"
 
   delete "line_item_delete_from_cart/:product_id", to: "line_items#destroy_from_cart", as: "destroy_from_cart"
+
+  post "/delivered/:order_id", to: "orders#mark_delivered", as: "mark_delivered"
+  get "/orders/marked", to: "orders#index_marked", as: "index_marked"
+
+  post "/undelivered/:order_id", to: "orders#mark_undelivered", as: "mark_undelivered"
+
 end

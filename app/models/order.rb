@@ -2,6 +2,8 @@ class Order < ApplicationRecord
   belongs_to :user
   has_many :line_items, dependent: :destroy
 
+  enum status: { pending: 0, delivered: 1 }
+
   def total
     sum = 0
     self.line_items.each do |line_item|

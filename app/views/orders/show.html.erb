@@ -37,6 +37,13 @@
                     </div>
                 </div>
                 <% end %>
+                    <div
+                        class="flex items-center gap-4 px-10 py-3 font-medium leading-8 bg-white rounded-md shadow dark:text-gray-400 dark:bg-gray-800 font-heading">
+                        <h3>Address:</h3>
+                        <span class="flex items-center text-blue-500 dark:text-blue-400">
+                            <span class="text-xl"><%= @order.user.address %></span>
+                        </span>
+                    </div>
             </div>
             <div class="max-w-4xl mx-auto ">
                 <h2 class="mb-4 text-xl font-medium dark:text-gray-400 ">Order Details:</h2>
