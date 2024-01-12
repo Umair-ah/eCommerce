@@ -42,7 +42,7 @@ export default class extends Controller {
           },
           body: JSON.stringify(paymentData),
         })
-          .then((response) => response.json)
+          .then((response) => response.json())
           .catch((error) => {
             console.error("Error: ", error);
           });

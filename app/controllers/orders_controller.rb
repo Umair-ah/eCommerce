@@ -67,8 +67,7 @@ class OrdersController < ApplicationController
 
           turbo_stream.update(
             "admin_orders_delivered",
-            partial: "orders/admin_orders_delivered",
-            locals: {order: @order}
+            partial: "orders/admin_orders_delivered"
           ),
           turbo_stream.update(
             "flash_#{current_user&.id}",

@@ -8,11 +8,12 @@
                       <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                           <% @product.images.each_with_index do |image, index| %>
                           <!-- Item 1 -->
-                            <div class="<%= index.zero? ? "duration-700 ease-in-out" : "hidden" %>" data-carousel-item="<%= index.zero? ? "active" : "" %>">
+                            <div class="<%= index.zero? ? "active" : "hidden" %>" data-carousel-item="<%= index %>">
                               <%= image_tag image, class:"absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" %>
                             </div>
                           <% end %>
                       </div>
+
                       <!-- Slider indicators -->
                       <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
                         <% @product.images.each_with_index do |_, index| %>
